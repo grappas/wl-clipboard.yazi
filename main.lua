@@ -39,7 +39,7 @@ return {
 		local status, err =
 			Command("wl-copy"):arg("--type"):arg("text/uri-list"):arg(file_list_formatted):spawn():wait()
 
-		if status or status.succes then
+		if status and status.success then
 			ya.notify({
 				title = "System Clipboard",
 				content = "Succesfully copied the file(s) to system clipboard",
